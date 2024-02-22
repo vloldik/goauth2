@@ -1,3 +1,12 @@
+# Fork description
+## Changed 
+  * in ```PasswordAuthorizationHandler``` passed ```context.Context``` changed to net/```http.Request``` to add more flexebility.
+
+To use add the following code in your ```go.mod```
+```go.mod
+replace github.com/go-oauth2/oauth2/v4 => github.com/vloldik/goauth2/v4 v4.5.3
+```
+
 # Golang OAuth 2.0 Server
 
 > An open protocol to allow secure authorization in a simple and standard method from web, mobile and desktop applications.
