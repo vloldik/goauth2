@@ -1,7 +1,6 @@
 package server_test
 
 import (
-	"context"
 	"fmt"
 	"net/http"
 	"net/http/httptest"
@@ -260,7 +259,7 @@ func TestPasswordCredentials(t *testing.T) {
 
 	manager.MapClientStorage(clientStore("", false))
 	srv = server.NewDefaultServer(manager)
-	srv.SetPasswordAuthorizationHandler(func(ctx context.Context, clientID, username, password string) (userID string, err error) {
+	srv.SetPasswordAuthorizationHandler(func(r *http.Request, clientID, username, password string) (userID string, err error) {
 		if username == "admin" && password == "123456" {
 			userID = "000000"
 			return
